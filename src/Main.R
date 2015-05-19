@@ -1,0 +1,8 @@
+source("MakeData.R")
+source("Init_EDA.R")
+source("Inference.R")
+source("WeatherModel_Prediction.R")
+source("Spraying_Prediction.R")
+source("Weather_Prediction_Restricted.R")
+source("ROC_PredictionResults.R")
+source("ConfusionMatrices.R")

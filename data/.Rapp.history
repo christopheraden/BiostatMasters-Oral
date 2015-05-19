@@ -1,0 +1,2 @@
+load("/Users/aden/Dropbox/School/MS Exam/data/bigTrain2011_2013.rdata")
+ls()
