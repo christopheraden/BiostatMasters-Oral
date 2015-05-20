@@ -1,4 +1,4 @@
-if(Sys.info()['user']=="Aden") { setwd("~/Dropbox/School/MS Exam/") } else setwd("~/MS\ Exam/")
+if(Sys.info()['user']=="aden") { setwd("~/Dropbox/School/MS Exam/") } else setwd("~/MS\ Exam/")
 library(data.table)
 library(caret)
 library(doMC)
