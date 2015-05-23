@@ -1,4 +1,4 @@
-if(Sys.info()['user']=="Aden") { setwd("~/Dropbox/School/MS Exam/") } else setwd("~/MS\ Exam/")
+if(Sys.info()['user']=="aden") { setwd("~/Dropbox/School/MS Exam/") } else setwd("~/MS\ Exam/")
 library(car)
 library(MASS)
 library(pROC)
@@ -28,10 +28,6 @@ SprayEffectCts = glm(WnvPresent ~ . -Species -Trap -Block -Tmax -Tmin -Cool -Dat
 SprayEffectDich =glm(WnvPresent ~ . -Species -Trap -Block -Tmax -Tmin -Cool -Date + as.factor(Month) -Month + as.factor(Year) -Year + Latitude * Longitude + as.factor(Species) -NearbySprays + as.factor(NearbySprays>0),data=train, family='binomial')
 summary(SprayEffectCts)
 summary(SprayEffectDich)
-
-foo = formula((as.numeric(WnvPresent)-1) ~ . - Species - Trap - Block - Tmax - Tmin - Cool - 
-  Date + as.factor(Month) - Month + as.factor(Year) - Year + 
-  Latitude * Longitude + as.factor(Species) + as.factor(NearbySprays > 0) -NearbySprays)
 
 ridgeGCV = function(Lambda, X=train[n_eff,]){
   log(genridge::ridge(as.numeric(WnvPresent)-1 ~ . - Species - Trap - Block - Tmax - Tmin - Cool - 
